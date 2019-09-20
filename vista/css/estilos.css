@@ -1,0 +1,536 @@
+/*Colores
+1: rgba(247, 38, 255, 0.6);
+2:#FEE5FF
+3:rgb(243, 177, 245);
+3:
+*/
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+
+}
+html::-webkit-scrollbar{
+    scroll-behavior: smooth;
+    width: 12px;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: rgba(247, 38, 255);
+    border-radius: 10px;
+}
+header{
+	width: 100%;
+	background-color:#FEE5FF;
+
+}
+body{
+
+    background-color: white;
+   
+ }
+
+h1{
+    font-family: 'Lucida Handwriting';
+}
+
+.titulos {
+    width: 180px;
+    height: 50px;
+    margin: auto;
+    margin-top: 30px;
+    background:white;
+	padding: 10px;
+    font-size: 130%;
+    font-family: 'Lucida Handwriting';
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+}
+
+
+/*MENU RESPONSIVE*/
+
+.navegacion{
+	width: 100%;
+	background-color: rgba(247, 38, 255, 0.6);
+	position: relative;
+	z-index: 100;
+}
+
+.navegacion nav{
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;	
+	
+}
+
+.boton-menu{
+	display: none;
+}
+
+.boton-menu span{
+	color: #fff;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+}
+
+
+.menu{
+	list-style: none;
+	width: 100%;
+
+}
+
+.menu li{
+	display: inline-block;
+	
+}
+
+.menu li a{
+    display: block;
+    font-size: 100%;
+	padding: 10px;
+    color: white;
+    border: 1px solid;
+	text-decoration: none;
+    font-family: 'Lucida Handwriting';
+	
+}
+
+.menu li a:hover{
+	color: black;
+	background:rgb(193, 0, 211);
+	padding: 15px;
+	border-radius: 3px;
+	font-size: 100%;
+}
+.menu li i{
+    display: block;
+	color: black;
+	background:white;
+	padding: 15px;
+    font-size: 120%;
+    font-family: 'Lucida Handwriting'
+    
+	
+}
+
+/*RESPONSIVE DEL MENU*/
+@media screen and (max-width: 700px){
+	.boton-menu{
+		width: 90%;
+		margin: auto;
+		display: block;
+		padding: 8px 0;
+	}
+
+	.navegacion nav{
+		position: absolute;
+		left: -100%;
+		width: 180px;
+		height: 100%;
+		background: white;
+	}
+
+	.menu li{
+        display: block;
+        background: rgb(246, 191, 248);
+    }
+    .menu li a{
+        display: block;
+        background: rgb(243, 177, 245);
+        border: 1px solid;
+	}
+}
+
+/*FIN MENU RESPONSIVE*/
+
+/*TARJETAS*/
+#imgtarjetas {
+    background-image: url(fondos/tarjeta.jpg );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.contenedor-tarjetas{
+    width: 100%;
+    height: 100%;
+    margin: 40px auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+}
+
+.tarjeta-contenida{
+     margin: 50px;
+     -webkit-perspective: 10000;
+     perspective: 10000;
+}
+
+.tarjeta {
+    width: 300px;
+    height: 350px;
+    background: #fff6ef;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.8s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+}
+.starjeta {
+    width: 400px;
+    height: 350px;
+    background: #fff6ef;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.8s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+}
+
+.adelante, .atras {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.atras{
+    -webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+    text-align: center;
+    color: black;
+    font-family: 'Lucida Handwriting';
+
+}
+
+.atras-s{
+    -webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	padding: 15px;
+	
+
+	
+
+    text-align: center;
+    color: black;
+    font-family: 'Lucida Handwriting';
+
+}
+
+.tarjeta-contenida:hover .tarjeta{
+    transform: rotateY(180deg);
+    
+
+}
+.tarjeta-contenida:hover .starjeta{
+    transform: rotateY(180deg);
+    
+
+}
+.adelante {
+
+    text-align: center;
+    color: black;
+    font-family: 'Lucida Handwriting';
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.card1 img{
+    width: 100%;
+    background-size: cover;
+
+    
+ 
+}
+.card2 img{
+    width: 100%;
+    background-size: cover;
+}
+
+.card3 img{
+    width: 100%;
+    background-size: cover;
+}
+/*FIN TARJETAS*/
+
+/*AGENDA*/
+
+.agenda{
+    width: 100%;
+    height: 100%;
+    margin: 40px auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+
+
+}
+
+
+/*FIN AGENDA*/
+
+
+/*FOOTER*/
+
+.formC {
+    width: 300px;
+    
+    background: rgba(0,0,0,0);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+	border-radius: 7px;
+	margin: auto;
+	float: right;
+
+}
+
+
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	
+}
+
+.h2s {
+    color: black;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    border: 1px solid purple;
+}
+
+.textarea {
+    min-height: 50px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+.btn-sub{
+    color: black;
+    background: white;
+    border: 1px solid black;
+}
+
+#boton{
+    background: #31384A;
+    color: #fff;
+    padding: 20px;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+
+
+
+
+footer{
+    width: 100%;
+    background-color: rgba(252, 179, 255, 0.6);
+    color:black;   
+    
+}
+
+.container-footer-all{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.container-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.colum1{
+    max-width: 400px;
+}
+
+.colum1 h1{
+    font-size: 22px;
+}
+
+.colum1 p{
+    font-size: 14px;
+    color: black;
+    margin-top: 20px;
+}
+
+.colum2{
+    max-width: 400px;
+    
+}
+
+.colum2 h1{
+    font-size: 22px;
+}
+
+.row{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img{
+    width: 36px;
+    height: 36px;
+}
+
+.row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: black;
+}
+
+.colum3{
+    max-width: 400px;
+}
+
+.colum3 h1{
+    font-size: 22px;
+}
+
+.row2{
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img{
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer{
+    width: 100%;  
+    background-color: rgba(252, 179, 255, 0.6);
+}
+
+.footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;  
+    padding: 20px;
+}
+
+.copyright{
+    background-color: rgba(252, 179, 255, 0.6);
+}
+
+.copyright a{
+    text-decoration: none;
+    background-color: rgba(252, 179, 255, 0.6);
+    font-weight: bold;
+}
+
+.information a{
+    text-decoration: none;
+	background-color: rgba(252, 179, 255, 0.6);
+}
+
+
+@media screen and (max-width: 1100px){
+    
+    .container-body{
+        flex-wrap: wrap;
+    }
+    
+    .colum1{
+        max-width: 100%;
+    }
+    
+    .colum2,
+    .colum3{
+        margin-top: 40px;
+    }
+}
+
+
+
+@media (max-width:480px) {
+    form{
+        width: 100%;
+    }
+}
+
+/*FIN FOOTER*/
+
+
+
+
+
+
